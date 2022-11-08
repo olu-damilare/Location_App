@@ -31,7 +31,7 @@ void _savePlace(){
   if(_titleController.text.isEmpty || _pickedImage == null){
     return;
   }
-  Provider.of<GreatPlaces>(context, listen: false).addPlace(
+  Provider. of<GreatPlaces>(context, listen: false).addPlace(
       _titleController.text, _pickedImage!, _pickedLocation!);
   Navigator.of(context).pop();
 }
@@ -66,13 +66,13 @@ void _savePlace(){
               ),
             ),
           ),
-          RaisedButton.icon(
+          ElevatedButton.icon(
               onPressed: _savePlace,
               icon: Icon(Icons.add),
               label: Text('Add Place'),
-            elevation: 0,
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            color: Theme.of(context).accentColor,
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Theme.of(context).accentColor)
+            ),
           ),
         ],
       ),

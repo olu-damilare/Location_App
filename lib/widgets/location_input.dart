@@ -77,17 +77,21 @@ class _LocationInputState extends State<LocationInput> {
        Row(
          mainAxisAlignment: MainAxisAlignment.center,
          children: [
-         FlatButton.icon(
+         TextButton.icon(
              onPressed: _getCurrentUserLocation,
              icon: Icon(Icons.location_on),
                label: Text('Current Location'),
-           textColor: Theme.of(context).primaryColor,
+           style: ButtonStyle(
+             backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+           ),
          ),
-         FlatButton.icon(
+         TextButton.icon(
            onPressed: _selectOnMap,
            icon: Icon(Icons.map),
            label: Text('Select on Map'),
-           textColor: Theme.of(context).primaryColor,
+           style: ButtonStyle(
+             backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+           ),
          )
        ],)
     ]
